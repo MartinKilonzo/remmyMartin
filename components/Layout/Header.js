@@ -9,11 +9,22 @@
  */
 
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import PropTypes from 'prop-types';
 import Navigation from './Navigation';
-import Link from '../Link';
+import Avatar from 'material-ui/Avatar';
 import s from './Header.css';
 
 class Header extends React.Component {
+
+  static propTypes = {
+    showNav: PropTypes.bool.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = props;
+  }
 
   componentDidMount() {
     window.componentHandler.upgradeElement(this.root);
@@ -23,20 +34,47 @@ class Header extends React.Component {
     window.componentHandler.downgradeElements(this.root);
   }
 
+  handleMouseEnter = () => this.setState({ showNav: true })
+
+  handleMouseLeave = () => this.setState({ showNav: false })
+
   render() {
+    const styles = {
+      headerBar: {
+        height: '56px',
+        display: 'flex',
+        justifyContent: 'center',
+      },
+      wrapper: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+      },
+      avatar: {
+        marginTop: `${this.state.showNav ? 56 : 12}px`,
+      },
+    };
+    const avatarSize = this.state.showNav ? 120 : 72;
     return (
       <header className={`mdl-layout__header ${s.header}`} ref={node => (this.root = node)}>
-        <div className={`mdl-layout__header-row ${s.row}`}>
-          <Link className={`mdl-layout-title ${s.title}`} to="/">
-            React Static Boilerplate
-          </Link>
-          <div className="mdl-layout-spacer"></div>
-          <Navigation />
+        <div style={styles.headerBar} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+          <Avatar size={avatarSize} style={styles.avatar}>M</Avatar>
         </div>
+        <ReactCSSTransitionGroup transitionName="header" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+          {this.state.showNav && <div>
+            <div className={`mdl-layout__header-row ${s.row}`} style={styles.wrapper}>
+              <div className="mdl-layout-spacer"></div>
+              <Navigation />
+            </div>
+          </div>}
+        </ReactCSSTransitionGroup>
       </header>
     );
   }
-
 }
+
+Header.defaultProps = {
+  showNav: false,
+};
 
 export default Header;

@@ -15,16 +15,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
 import { Provider } from 'react-redux';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import store from './core/store';
 import router from './core/router';
 import history from './core/history';
 
+injectTapEventPlugin();
+
 let routes = require('./routes.json'); // Loaded with utils/routes-loader.js
 const container = document.getElementById('container');
 
 function renderComponent(component) {
-  ReactDOM.render(<Provider store={store}>{component}</Provider>, container);
+  const app = <Provider store={store}>{component}</Provider>;
+  ReactDOM.render(<MuiThemeProvider>{app}</MuiThemeProvider>, container);
 }
 
 // Find and render a web page matching the current URL path,
