@@ -9,8 +9,8 @@
  */
 
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Navigation from './Navigation';
 import Avatar from 'material-ui/Avatar';
 import s from './Header.css';
@@ -34,9 +34,9 @@ class Header extends React.Component {
     window.componentHandler.downgradeElements(this.root);
   }
 
-  handleMouseEnter = () => this.setState({ showNav: true })
+  handleMouseEnter = () => this.setState({ showNav: true, avatarSize: 120 })
 
-  handleMouseLeave = () => this.setState({ showNav: false })
+  handleMouseLeave = () => this.setState({ showNav: false, avatarSize: 72 })
 
   render() {
     const styles = {
@@ -44,30 +44,34 @@ class Header extends React.Component {
         height: '56px',
         display: 'flex',
         justifyContent: 'center',
+        background: 'inherit',
       },
       wrapper: {
+        position: 'absolute',
+        zIndex: 99,
+        top: '56px',
+        width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
+        background: 'inherit',
       },
       avatar: {
+        zIndex: 100,
         marginTop: `${this.state.showNav ? 56 : 12}px`,
       },
     };
-    const avatarSize = this.state.showNav ? 120 : 72;
+
     return (
       <header className={`mdl-layout__header ${s.header}`} ref={node => (this.root = node)}>
         <div style={styles.headerBar} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-          <Avatar size={avatarSize} style={styles.avatar}>M</Avatar>
+          <Avatar size={this.state.avatarSize} style={styles.avatar}>M</Avatar>
+            {this.state.showNav &&
+              <div className={`mdl-layout__header-row ${s.row}`} style={styles.wrapper}>
+                <div className="mdl-layout-spacer"></div>
+                <Navigation />
+              </div>}
         </div>
-        <ReactCSSTransitionGroup transitionName="header" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-          {this.state.showNav && <div>
-            <div className={`mdl-layout__header-row ${s.row}`} style={styles.wrapper}>
-              <div className="mdl-layout-spacer"></div>
-              <Navigation />
-            </div>
-          </div>}
-        </ReactCSSTransitionGroup>
       </header>
     );
   }
@@ -75,6 +79,7 @@ class Header extends React.Component {
 
 Header.defaultProps = {
   showNav: false,
+  avatarSize: 72,
 };
 
 export default Header;

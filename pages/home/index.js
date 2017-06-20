@@ -8,15 +8,19 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import Layout from '../../components/Layout';
+import Projects from './Projects.jsx';
+
 import s from './styles.css';
-import { title, html } from './index.md';
+import { title } from './index.md';
 
 class HomePage extends React.Component {
 
   static propTypes = {
-    articles: PropTypes.array.isRequired,
+    projects: PropTypes.array.isRequired,
   };
 
   componentDidMount() {
@@ -24,22 +28,45 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const styles = {
+      title: {
+        marginTop: '10%',
+        marginBottom: '6px',
+        fontFamily: 'Roboto',
+        fontWeight: 300,
+        fontSize: 96,
+      },
+      subtitle: {
+        marginTop: '6px',
+        fontFamily: 'Roboto',
+        fontWeight: 300,
+      },
+    };
+
     return (
       <Layout className={s.content}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-        <h4>Articles</h4>
-        <ul>
-          {this.props.articles.map((article, i) =>
-            <li key={i}><a href={article.url}>{article.title}</a> by {article.author}</li>
-          )}
-        </ul>
-        <p>
-          <br /><br />
-        </p>
+        <h1 style={styles.title}>Welcome</h1>
+        <h3 style={styles.subtitle}>Check out some of my projects below:</h3>
+        <Projects projects={this.props.projects} />
       </Layout>
     );
   }
 
 }
+
+const getProjects = () => {
+  const projects = [];
+
+  for (let i = 0; i < 6; i ++) {
+    const project = require(`./Projects/project1.md`);
+    projects.push(project);
+  }
+
+  return projects;
+};
+
+HomePage.defaultProps = {
+  projects: getProjects(),
+};
 
 export default HomePage;
