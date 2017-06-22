@@ -1,15 +1,62 @@
 ---
-title: My Project
+title: Limitless
 
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+description: A business management application which uses computer-vision and RFID/NFC payments to streamline expense tracking and cash flow management for small business owners.
+
+preview: previews/limitless.png
+
+skills: Java, JavaScript, Python, React, MongoDB, Express.js, Flask
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nisl pharetra, ultricies odio non, hendrerit dolor. Donec quis molestie sapien, et posuere odio. Nunc ullamcorper massa id libero ultrices, eget lacinia lorem volutpat. Fusce eget nisl vitae lacus tincidunt ultricies. Suspendisse quis ante ornare orci ullamcorper ullamcorper et eget est. Proin vitae massa quam. Proin pharetra congue interdum. Aliquam feugiat blandit felis at malesuada. Curabitur vitae ante non mi bibendum convallis. Morbi gravida pretium velit. Aliquam tristique magna et semper aliquet. Nullam ultricies tempor metus, et vehicula turpis tristique at.
+![Preview of the Limitless app][image-1]
 
-Donec sit amet dictum quam. Quisque quis lobortis ipsum. Praesent vitae est tellus. Donec sed leo eu nibh dictum eleifend non vitae nunc. Nulla mattis ante eu sapien suscipit aliquet. Integer ac bibendum metus. Cras posuere condimentum orci eget pulvinar. Proin sodales consectetur erat, at pharetra lacus. Phasellus magna ante, eleifend vitae purus non, semper rhoncus nisl. Etiam cursus, arcu at mollis gravida, enim odio fringilla diam, sed hendrerit enim dui vitae mauris.
+In September of 2017, I was approached by a team of two business graduates and two programmers who wanted me to join them in competing in RBC’s Next Great Innovator hackathon. I was intrigued especially since this was the first hackathon I have participated in which had a prompt: we were tasked with designing and prototyping a tool that helps small-medium business owners manage and grow their businesses.
 
-Aliquam tristique tincidunt augue. Sed metus leo, volutpat non risus in, bibendum interdum dolor. Sed facilisis semper orci, vel efficitur magna euismod sit amet. Maecenas blandit a nunc dapibus porttitor. Pellentesque congue imperdiet porta. Nulla feugiat lorem felis, id fringilla tellus luctus eu. Sed odio diam, faucibus vel nulla nec, gravida hendrerit nisl.
+## Idea
+Our first objective was to narrow down what “helps small-medium business owners manage and grow their businesses” entailed. After peering through hours of statistics and articles, and conducting dozens of interviews with entrepreneurs, it was clear to us that the most pressing issues these early entrepreneurs faced could be bucketed into three categories:
+1. Generating sales
+2. Managing their payments to suppliers
+3. Finding competent employees
+Considering the theme of the hackathon (it being hosted by Canada’s largest retail bank), we opted to try to help solve the second problem, and explored it further. After conducting a second round of interviews, we discovered that these business owners had trouble getting cash when they needed it, because the loan approval process was too slow for their fast-paced needs, or because of off-sync sales and invoice cycles. And so, our goal was to develop a product which can provide cash to businesses immediately, allowing entrepreneurs focus less on managing their cash, and more on growing their businesses.
 
-Fusce mattis sit amet odio non convallis. Nulla dui leo, finibus vitae ex in, eleifend egestas massa. Suspendisse ut quam sit amet orci porta gravida vel at libero. Vestibulum blandit pellentesque eros et semper. Maecenas nec purus luctus, facilisis lacus sit amet, hendrerit ligula. Phasellus vestibulum ipsum vel consectetur placerat. Nulla accumsan lacus vitae quam porttitor accumsan. Aliquam vitae bibendum justo.
+## Hackathon
+Having spent time with entrepreneurs to design a solution that worked for them beforehand, we came into the hackathon knowing what we were going to make, and how each component should look.
 
-Nulla scelerisque, mi sed lacinia elementum, ex orci euismod turpis, fringilla porttitor leo nisi at urna. Proin mollis velit vel fringilla lacinia. Phasellus id tellus metus. Vestibulum ultricies massa ante, sed mollis nisi interdum quis. Nullam volutpat sit amet mauris porttitor hendrerit. Nunc nec malesuada libero. Aenean in sapien ipsum. Suspendisse mi dui, sollicitudin vel auctor sit amet, mattis et nunc. Cras quis pulvinar mauris. Praesent at ex dictum, pulvinar mi id, rhoncus arcu. Ut id sem interdum, ornare elit non, rhoncus mi. Etiam nec placerat quam, in imperdiet sapien. Curabitur facilisis dapibus mollis.
+Our application brought used a collection of four features to solve entrepreneurs cash problems:
+1. Dashboard to monitor the firm’s health
+2. Payments view to manage cash accounts and balances
+2. Android payments app to track cash outflows and manage access to accounts
+4. Analytics which made recommendations to better manage cash inflows and outflows and detect unusual spending.
+### Website
+Using React.js as its front-end framework, the website provided an overview of the firm’s finances, coupled with controls to manage access, users, and change other settings. Each of the features were designed with scalability in mind, allowing certain users to add staff, teams, and departments allowing the app to grow with the firm.
+
+
+![The Dashboard view of the Limitless app][image-2]
+_The dashboard provides an instant snapshot of the business’s cash situation, allowing the owner to quickly assess its status on the fly._
+
+
+![A cash breakdown by team and teammember][image-3]
+_The team view allows management to track cash trends of specific teams, departments, and members._
+
+
+![The payments view of the Limitless app][image-4]
+_The payments view provides the necessary controls to manage spending accounts and their permissions, as well as track their performance._
+
+
+### Android App
+Built using Android Studio, the Android app allowed our solution to go mobile, with payments through NFC or eTransfers and receipt tracking through the device’s camera.
+
+### Brains
+Since the purpose of the application was to relieve entrepreneurs of the burden of managing their cash, we had to make the application capable of doing most of the work. Here, we developed a back-end which was responsible for analyzing the firm’s cash details, and handle the receipt reading.
+
+The back-end analyzed a firm’s cash spending to detect discrepancies in spending across an employee’s history, other employees, teams, etc., and even compared cash usage patters against industry averages—aggregate metrics derived from other firms which use the app. This data was used in a regressive model, where, using Bollinger bands to establish upper and lower thresholds, we could predict a firm’s future cash position and make recommendations to ensure the firm stays financially healthy.
+
+Receipts were also parsed from images provided by the payments app. Here, we used an OCR library to read a receipt’s contents, and then categorize purchases within the app to provide richer data for the system to analyze.
+
+## Result
+We ended up placing in the semi-finals, flawed by our overly-pragmatic approach. Nevertheless, it was a great experience that brought me closer to a team of awesome people, and exposed me to some cool technology.
+
+[image-1]:	previews/limitless.png "Limitless"
+[image-2]:	previews/limitless-dashboard.png "Limitless Dashboard"
+[image-3]:	previews/limitless-team.png "Limitless Team"
+[image-4]:	previews/limitless-payments.png "Limitless Payments"

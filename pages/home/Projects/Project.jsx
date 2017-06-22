@@ -38,12 +38,12 @@ class ProjectComponent extends React.PureComponent {
         textAlign: 'left',
       },
       preview: {
-        width: '36%',
+        width: '42%',
         height: '100%',
         paddingRight: '4%',
       },
       description: {
-        width: '56%',
+        width: '50%',
         paddingLeft: '4%',
       },
     };
@@ -51,15 +51,13 @@ class ProjectComponent extends React.PureComponent {
     return (
       <div>
         <RaisedButton style={styles.wrapper} buttonStyle={styles.buttonStyle} overlayStyle={styles.buttonWrapper} onTouchTap={this.handleTouchTap} fullWidth>
-          <div style={styles.preview}>
-            whoa
-          </div>
+          <img src={this.props.preview} alt={`${this.props.title} Preview`} style={styles.preview} />
           <div style={styles.description}>
             <h5>{this.props.title}</h5>
             <p>{this.props.description}</p>
           </div>
         </RaisedButton>
-        <Dialog title={this.props.title} open={this.state.open} onRequestClose={() => this.setState({ open: false })} autoScrollBodyContent>
+        <Dialog bodyClassName="project-dialog" title={this.props.title} open={this.state.open} onRequestClose={() => this.setState({ open: false })} autoScrollBodyContent>
           <div dangerouslySetInnerHTML={{ __html: this.props.html }} />
         </Dialog>
       </div>

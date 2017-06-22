@@ -21,8 +21,6 @@ class Projects extends React.PureComponent {
       },
     };
 
-    // console.log(this.props.projects);
-
     return (
       <div style={styles.wrapper}>
         {this.props.projects.map((project, key) => <Project key={key} {...project} />)}
