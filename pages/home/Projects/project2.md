@@ -1,19 +1,38 @@
 ---
-title: My Project
+title: Reddit Redesign
 
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+description: A content-focused redesign of Reddit inspired by 30+ design principles from Universal Principles of Design (Lidwell et al), with the goal of lowering the learning curve for new Redditors.
 
-preview: previews/reddit_nav.JPG
+preview: previews/redditredesign.jpg
+
+skills: Javascript, React
+
+github: RedditRedesign
 ---
 
-![Main Page](previews/reddit_nav.JPG)
+![Content-focused browsing experience.][image-1]
+_Content-focused browsing experience._
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nisl pharetra, ultricies odio non, hendrerit dolor. Donec quis molestie sapien, et posuere odio. Nunc ullamcorper massa id libero ultrices, eget lacinia lorem volutpat. Fusce eget nisl vitae lacus tincidunt ultricies. Suspendisse quis ante ornare orci ullamcorper ullamcorper et eget est. Proin vitae massa quam. Proin pharetra congue interdum. Aliquam feugiat blandit felis at malesuada. Curabitur vitae ante non mi bibendum convallis. Morbi gravida pretium velit. Aliquam tristique magna et semper aliquet. Nullam ultricies tempor metus, et vehicula turpis tristique at.
+![Cleaner, more navigable navigation menu.][image-2]
+_Cleaner, more navigable navigation menu._
 
-Donec sit amet dictum quam. Quisque quis lobortis ipsum. Praesent vitae est tellus. Donec sed leo eu nibh dictum eleifend non vitae nunc. Nulla mattis ante eu sapien suscipit aliquet. Integer ac bibendum metus. Cras posuere condimentum orci eget pulvinar. Proin sodales consectetur erat, at pharetra lacus. Phasellus magna ante, eleifend vitae purus non, semper rhoncus nisl. Etiam cursus, arcu at mollis gravida, enim odio fringilla diam, sed hendrerit enim dui vitae mauris.
+![Cleaner, more functional search feature][image-3]
+_ Enhanced search feature, which is used to discover subreddits, threads, and content._
 
-Aliquam tristique tincidunt augue. Sed metus leo, volutpat non risus in, bibendum interdum dolor. Sed facilisis semper orci, vel efficitur magna euismod sit amet. Maecenas blandit a nunc dapibus porttitor. Pellentesque congue imperdiet porta. Nulla feugiat lorem felis, id fringilla tellus luctus eu. Sed odio diam, faucibus vel nulla nec, gravida hendrerit nisl.
+## Executive Summary of the Project
+Reddit is a social media website where over 250 million unique users go to browse the latest, most popular content available on the internet. Here, users share images, articles, projects, videos, and other content, which are then ranked by other users using an upvote-downvote system to indicate the quality of the content. Users are able to reply to the content, creating a conversation surrounding the particular topics, which too are exposed to the content rating system. 
+As the home of the internet’s seventh most popular website, Reddit’s desktop experience is very unimpressive. Although simple in design, Reddit is under-designed—it is difficult to navigate, and is reminiscent of websites predating the year 2000. The visuals affect the user’s perception of the website, and thus their experience. 
+Moreover, its layout is cumbersome for the user, hampering their ability effectively use the application. Many of the title bars, and dropdown menus are unintuitive, and there are inconsistencies in the layout of the topic pages. Further, browsing through content is hampered by the user’s inability to preview a “post” before committing to reading it. In fact, this process is exceptionally cumbersome, as the user must either load the entire post in their current window, or open a new window for each new intriguing post. These, and many other issues make the in-browser Reddit experience disappointing, especially when compared to the experience offered from their mobile apps. 
+Our goal was to change this—to transform Reddit’s landing page into an experience worthwhile, that is easy to navigate and encouraging to new users. To accomplish this task, we have explored many design principles to guide us in redesigning the webpage. 
+Many of the title bars and drop-down menus are unintuitive, and there are inconsistencies in the layout of the topics in the front page of their website. We reorganized the topics on the front to be more interesting and more intuitive for users. Additionally, we noted the many redundant or duplicate features available on Reddit’s front page and removed or reorganized them to reduce clutter, simplifying the navigating process for users. 
+Although these changes have significant impact on the visual appearance of Reddit, we aimed to minimize their effect on its functionality. We reorganized the functional components to be co-located with the relevant components—that is, the components which the effect. To this end, we redesigned what a post looks like, focusing on the content (typically an image or video), rather than the title, and providing their respective controls in an encapsulated content-tile. Taking this further, we split Reddit’s one-page, monolithic approach into three main views: the content view, the navigation view, and the search view—each with the respective components and functionality encapsulated in their views. This was done to emphasize the relationships between components and functions, reinforcing their mappings for users. 
+It seems that Reddit forgot its primary purpose in designing their front page. As a content viewing website, their front page fails to emphasize the viewing of content. Moreover, it fails to act as a functional entry-point, as its illogical layout makes navigation a nightmare. Our redesign aims to refocus the Reddit experience on content viewing, by emphasizing the content, and providing ancillary content and navigation functionality in appropriate locations, reflective of a content-first experience. 
 
-Fusce mattis sit amet odio non convallis. Nulla dui leo, finibus vitae ex in, eleifend egestas massa. Suspendisse ut quam sit amet orci porta gravida vel at libero. Vestibulum blandit pellentesque eros et semper. Maecenas nec purus luctus, facilisis lacus sit amet, hendrerit ligula. Phasellus vestibulum ipsum vel consectetur placerat. Nulla accumsan lacus vitae quam porttitor accumsan. Aliquam vitae bibendum justo.
+[Click here for the full report][1]
 
-Nulla scelerisque, mi sed lacinia elementum, ex orci euismod turpis, fringilla porttitor leo nisi at urna. Proin mollis velit vel fringilla lacinia. Phasellus id tellus metus. Vestibulum ultricies massa ante, sed mollis nisi interdum quis. Nullam volutpat sit amet mauris porttitor hendrerit. Nunc nec malesuada libero. Aenean in sapien ipsum. Suspendisse mi dui, sollicitudin vel auctor sit amet, mattis et nunc. Cras quis pulvinar mauris. Praesent at ex dictum, pulvinar mi id, rhoncus arcu. Ut id sem interdum, ornare elit non, rhoncus mi. Etiam nec placerat quam, in imperdiet sapien. Curabitur facilisis dapibus mollis.
+
+[1]:	previews/reddit-redesign.pdf "Reddit Redeisgn"
+
+[image-1]:	previews/reddit-dashboard "Reddit Dashboard"
+[image-2]:	previews/reddit-nav "Reddit Navigation Menu"
+[image-3]:	previews/reddit-search "Reddit Search Bar"
