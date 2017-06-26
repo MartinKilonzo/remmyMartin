@@ -1,0 +1,29 @@
+{
+  "Java": {
+    "color": "#b07219"
+  },
+  "JavaScript": {
+    "color" : "#f1e05a"
+  },
+  "Python": {
+    "color" : "#3581ba"
+  },
+  "React": {
+    "color" : "#f1e05a"
+  },
+  "MongoDB": {
+    "color" : "#f1e05a"
+  },
+  "Express.js": {
+    "color" : "#f1e05a"
+  },
+  "Flask": {
+    "color" : "#3581ba"
+  },
+  "Numpy": {
+    "color": "#3581ba"
+  },
+  "Scikit-Learn": {
+    "color" : "#3581ba"
+  }
+}

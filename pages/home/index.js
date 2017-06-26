@@ -17,6 +17,8 @@ import Projects from './Projects.jsx';
 import s from './styles.css';
 import { title } from './index.md';
 
+const NUM_PROJECTS = 2;
+
 class HomePage extends React.Component {
 
   static propTypes = {
@@ -57,8 +59,8 @@ class HomePage extends React.Component {
 const getProjects = () => {
   const projects = [];
 
-  for (let i = 0; i < 6; i ++) {
-    const project = require(`./Projects/project1.md`);
+  for (let i = 1; i <= NUM_PROJECTS; i ++) {
+    const project = require(`./Projects/project${i}.md`);
     projects.push(project);
   }
 

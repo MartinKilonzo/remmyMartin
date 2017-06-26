@@ -5,7 +5,7 @@ description: A content-focused redesign of Reddit inspired by 30+ design princip
 
 preview: previews/redditredesign.jpg
 
-skills: Javascript, React
+skills: JavaScript, React
 
 github: RedditRedesign
 ---
