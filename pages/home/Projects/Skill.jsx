@@ -10,12 +10,11 @@ class Skill extends React.PureComponent {
   }
 
   handleMouseEnter = (event) => {
-    event.target.style.background =  this.getColor(0.4);
+    event.target.style.background = this.getColor(0.4);
   }
 
   handleMouseLeave = (event) => {
     event.target.style.background = this.getColor(0.25);
-
   }
 
   getColor = (alpha) => {
@@ -36,9 +35,9 @@ class Skill extends React.PureComponent {
       wrapper: {
         height: '20px',
         margin: '4px',
-        padding: '4px 8px',
+        padding: '2px 8px',
         border: `1px solid ${this.getColor(1)}`,
-        borderRadius: '4px',
+        borderRadius: '6px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

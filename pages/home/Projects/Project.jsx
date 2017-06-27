@@ -4,6 +4,7 @@ import Dialog from 'material-ui/Dialog';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import Skill from './Skill.jsx';
+import GithubLink from './GithubLink.jsx';
 
 class ProjectComponent extends React.PureComponent {
 
@@ -18,10 +19,22 @@ class ProjectComponent extends React.PureComponent {
   }
 
   handleMouseEnter = (event) => {
-    event.target.style.opacity = 0.65;
+    let element = event.target;
+    // Move up the tree to find the element with the box-shadow property
+    while (element.style.boxShadow.length === 0) {
+      element = element.parentElement;
+    }
+    // Modify the box-shadow property
+    element.style.boxShadow = 'rgba(0, 0, 0, 0.12) 0px 1px 18px, rgba(0, 0, 0, 0.12) 0px 1px 12px';
   }
   handleMouseLeave = (event) => {
-    event.target.style.opacity = 1;
+    let element = event.target;
+    // Move up the tree to find the element with the box-shadow property
+    while (element.style.boxShadow.length === 0) {
+      element = element.parentElement;
+    }
+    // Modify the box-shadow property
+    element.style.boxShadow = 'rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px';
   }
 
   handleTouchTap = () => {
@@ -85,6 +98,7 @@ class ProjectComponent extends React.PureComponent {
             <div style={styles.skillWrapper}>
               {skills.map((skill, key) => <Skill key={key} skill={skill} />)}
             </div>
+            <GithubLink link={this.props.github} />
           </div>
         </RaisedButton>
         <Dialog bodyClassName="project-dialog" title={this.props.title} open={this.state.open} onRequestClose={() => this.setState({ open: false })} autoScrollBodyContent>
