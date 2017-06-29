@@ -11,9 +11,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import Navigation from './Navigation';
 import Avatar from 'material-ui/Avatar';
+
+import Navigation from './Navigation';
 import s from './Header.css';
+import profileImage from './profileImage1.png';
 
 class Header extends React.Component {
 
@@ -65,7 +67,7 @@ class Header extends React.Component {
     return (
       <header className={`mdl-layout__header ${s.header}`} ref={node => (this.root = node)}>
         <div style={styles.headerBar} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-          <Avatar size={this.state.avatarSize} style={styles.avatar}>M</Avatar>
+          <Avatar src={profileImage} size={this.state.avatarSize} style={styles.avatar} />
             {this.state.showNav &&
               <div className={`mdl-layout__header-row ${s.row}`} style={styles.wrapper}>
                 <div className="mdl-layout-spacer"></div>

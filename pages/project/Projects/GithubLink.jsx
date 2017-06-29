@@ -19,7 +19,6 @@ class GithubLink extends React.PureComponent {
   handleMouseLeave = () => this.setState({ color: '#DDD' });
 
   handleClick = (event) => {
-    // history.pushState({}, `https://github.com/MartinKilonzo/${this.props.link}`);
     event.stopPropagation();
     window.location.href = `https://github.com/MartinKilonzo/${this.props.link}`;
   }
