@@ -17,8 +17,10 @@ class ProjectComponent extends React.PureComponent {
 
   constructor(props) {
     super(props);
+    const projectpath = `/project/${this.props.github}`;
     this.state = {
-      open: props.open,
+      open: projectpath === history.getCurrentLocation().pathname,
+      projectpath,
     };
   }
 
@@ -46,9 +48,8 @@ class ProjectComponent extends React.PureComponent {
   }
 
   isOpen = () => {
-    const project = `/project/${this.props.github}`;
     const { pathname } = history.getCurrentLocation();
-    this.setState({ open: project === pathname });
+    this.setState({ open: this.state.projectpath === pathname });
   }
 
   handleClose = () => {
@@ -104,8 +105,7 @@ class ProjectComponent extends React.PureComponent {
       return cleanedSkill;
     });
 
-    const link = <Link to={`/project/${this.props.github}`} />;
-    console.log(this.props.preview);
+    const link = <Link to={this.state.projectpath} />;
 
     return (
       <div>
@@ -120,8 +120,8 @@ class ProjectComponent extends React.PureComponent {
             <GithubLink link={this.props.github} />
           </div>
         </RaisedButton>
-        <Dialog bodyClassName="project-dialog" title={this.props.title} open={this.state.open} onRequestClose={this.handleClose} autoScrollBodyContent>
-          <div dangerouslySetInnerHTML={{ __html: this.props.html }} />
+        <Dialog title={this.props.title} open={this.state.open} onRequestClose={this.handleClose} autoScrollBodyContent>
+          <div className="project-dialog" dangerouslySetInnerHTML={{ __html: this.props.html }} />
         </Dialog>
       </div>
     );

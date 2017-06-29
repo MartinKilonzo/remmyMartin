@@ -1,11 +1,11 @@
 ---
 title: Hercules Galaxy
 
-description: Using tweets to assess local moods, and using changes in local emotions as a key feature in predicting criminal activity in Vancouver. Using natural language processing, local tweets were synthesized into an _emotional rating_ which was used to assess an area’s mood prior to a crime in the same area.
+description: 
 
-preview: previews/tweetcrime.png
+preview: previews/hercules.png
 
-skills: Python, Scikit-Learn, Tensorflow, Data Mining, Pandas
+skills: C++, Qt
 
 github: HerculesGalaxy
 ---

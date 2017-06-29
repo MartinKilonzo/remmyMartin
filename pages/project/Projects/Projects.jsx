@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Project from './Projects/Project.jsx';
+import Project from './Project.jsx';
 
 class Projects extends React.PureComponent {
 
