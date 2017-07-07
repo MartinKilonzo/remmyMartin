@@ -5,7 +5,7 @@ description: A content-focused redesign of Reddit inspired by 30+ design princip
 
 preview: previews/redditredesign.jpg
 
-skills: JavaScript, React
+skills: JavaScript, React, CSS
 
 github: RedditRedesign
 ---
@@ -19,7 +19,7 @@ _Cleaner, more navigable navigation menu._
 ![Cleaner, more functional search feature][image-3]
 _Enhanced search feature, which is used to discover subreddits, threads, and content._
 
-## Executive Summary of the Project
+## Overview
 Reddit is a social media website where over 250 million unique users go to browse the latest, most popular content available on the internet. Here, users share images, articles, projects, videos, and other content, which are then ranked by other users using an upvote-downvote system to indicate the quality of the content. Users are able to reply to the content, creating a conversation surrounding the particular topics, which too are exposed to the content rating system. 
 
 As the home of the internet’s seventh most popular website, Reddit’s desktop experience is very unimpressive. Although simple in design, Reddit is under-designed—it is difficult to navigate, and is reminiscent of websites predating the year 2000. The visuals affect the user’s perception of the website, and thus their experience. 

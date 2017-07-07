@@ -18,7 +18,12 @@ class Skill extends React.PureComponent {
   }
 
   getColor = (alpha) => {
-    const color = skillColors[this.props.skill].color;
+    let sc = skillColors[this.props.skill];
+    if (typeof skillColors[this.props.skill] === 'undefined') {
+      // console.warn(`Skill color not indexed: ${this.props.skill}`);
+      sc = skillColors.other;
+    }
+    const color = sc.color;
 
     const r = parseInt(color.slice(1, 3), 16);
     const g = parseInt(color.slice(3, 5), 16);

@@ -68,6 +68,7 @@ class ProjectComponent extends React.PureComponent {
       },
       buttonWrapper: {
         height: '100%',
+        minHeight: '236px',
         padding: '24px 36px',
         display: 'flex',
         justifyContent: 'space-between',
@@ -83,14 +84,30 @@ class ProjectComponent extends React.PureComponent {
         paddingRight: '4%',
       },
       description: {
+        height: '100%',
+        minHeight: '236px',
         width: '50%',
         paddingLeft: '4%',
+        display: 'flex',
+        flexDirection: 'column',
+      },
+      innerDescriptionWrapper: {
+        width: '100%',
+        display: 'flex',
+        alignSelf: 'flex-end',
+        flexGrow: '1',
       },
       skillWrapper: {
+        width: '100%',
+        marginLeft: '-4px',
         display: 'flex',
+        alignSelf: 'flex-end',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         flexWrap: 'wrap',
+      },
+      githubLinkWrapper: {
+        alignSelf: 'flex-end',
       },
     };
 
@@ -108,16 +125,20 @@ class ProjectComponent extends React.PureComponent {
     const link = <Link to={this.state.projectpath} />;
 
     return (
-      <div>
-        <RaisedButton style={styles.wrapper} containerElement={link} buttonStyle={styles.buttonStyle} overlayStyle={styles.buttonWrapper} onTouchTap={this.handleTouchTap} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} fullWidth>
+      <div style={{ width: '100%' }}>
+        <RaisedButton style={styles.wrapper} buttonStyle={styles.buttonStyle} overlayStyle={styles.buttonWrapper} containerElement={link} onTouchTap={this.handleTouchTap} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} fullWidth>
           <img src={this.props.preview} alt={`${this.props.title} Preview`} style={styles.preview} />
           <div style={styles.description}>
-            <h5>{this.props.title}</h5>
+            <h5 style={styles.title}>{this.props.title}</h5>
             <p>{this.props.description}</p>
-            <div style={styles.skillWrapper}>
-              {skills.map((skill, key) => <Skill key={key} skill={skill} />)}
+            <div style={styles.innerDescriptionWrapper}>
+              <div style={styles.skillWrapper}>
+                {skills.sort().map((skill, key) => <Skill key={key} skill={skill} />)}
+              </div>
+              <div style={styles.githubLinkWrapper}>
+                <GithubLink link={this.props.github} />
+              </div>
             </div>
-            <GithubLink link={this.props.github} />
           </div>
         </RaisedButton>
         <Dialog title={this.props.title} open={this.state.open} onRequestClose={this.handleClose} autoScrollBodyContent>

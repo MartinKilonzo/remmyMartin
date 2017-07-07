@@ -5,7 +5,7 @@ description: Using tweets to assess local moods, and using changes in local emot
 
 preview: previews/tweetcrime.png
 
-skills: Python, Scikit-Learn, Tensorflow, Data Mining, Pandas
+skills: Python, Scikit-Learn, TensorFlow, Data Mining, Pandas, NumPy
 
 github: TweetCrime
 ---
@@ -89,6 +89,10 @@ The results of this testing indicated that the model with both the coordinates a
 
 ### Future Work
 This was an interesting exploration into the use of language as a measurement for emotion and ultimately as a predictor for crime. In the future, this paper expects to improve the model to include a context analysis to get an understanding of the topics discussed and attempt to correlate these with events even beyond the scope of crime.
+
+
+
+
 
 
 

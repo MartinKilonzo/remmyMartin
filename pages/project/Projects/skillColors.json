@@ -20,10 +20,31 @@
   "Flask": {
     "color" : "#3581ba"
   },
-  "Numpy": {
+  "NumPy": {
+    "color": "#3581ba"
+  },
+  "Pandas": {
     "color": "#3581ba"
   },
   "Scikit-Learn": {
     "color" : "#3581ba"
+  },
+  "TensorFlow": {
+    "color" : "#3581ba"
+  },
+  "CSS": {
+    "color": "#563d7c"
+  },
+  "C++": {
+    "color": "#f34b7d"
+  },
+  "Qt": {
+    "color": "#f34b7d"
+  },
+  "MATLAB": {
+    "color": "#bb92ac"
+  },
+  "other": {
+    "color": "#82937f"
   }
 }

@@ -17,7 +17,7 @@ import Projects from './Projects/Projects.jsx';
 import s from './styles.css';
 import { title } from './index.md';
 
-const NUM_PROJECTS = 2;
+const NUM_PROJECTS = 5;
 
 class ProjectPage extends React.Component {
 
@@ -60,10 +60,11 @@ const getProjects = () => {
   const projects = [];
 
   for (let i = 1; i <= NUM_PROJECTS; i ++) {
-    const project = require(`./Projects/project${i}.md`);
+    const project = require(`./Projects/ProjectDocs/project${i}.md`);
     for (const field in project) {
       if (field !== 'html') {
         let data = project[field];
+        console.log(data, field);
         if (data[0] === ' ') {
           data = data.slice(1);
         }

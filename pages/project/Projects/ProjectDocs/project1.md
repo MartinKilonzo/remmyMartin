@@ -5,7 +5,7 @@ description: A business management application which uses computer-vision and RF
 
 preview: previews/limitless.png
 
-skills: Java, JavaScript, Python, React, MongoDB, Express.js, Flask, Scikit-Learn
+skills: Java, JavaScript, Python, React, MongoDB, Express.js, Flask, Scikit-Learn, NumPy, C++
 
 github: Limitless
 ---
