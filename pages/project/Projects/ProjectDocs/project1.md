@@ -59,6 +59,6 @@ Receipts were also parsed from images provided by the payments app. Here, we use
 We ended up placing in the semi-finals, flawed by our overly-pragmatic approach. Nevertheless, it was a great experience that brought me closer to a team of awesome people, and exposed me to some cool technology.
 
 [image-1]:	previews/limitless.png "Limitless"
-[image-2]:	previews/limitless-dashboard.png "Limitless Dashboard"
-[image-3]:	previews/limitless-team.png "Limitless Team"
-[image-4]:	previews/limitless-payments.png "Limitless Payments"
+[image-2]:	previews/limitless/dashboard.png "Limitless Dashboard"
+[image-3]:	previews/limitless/team.png "Limitless Team"
+[image-4]:	previews/limitless/payments.png "Limitless Payments"

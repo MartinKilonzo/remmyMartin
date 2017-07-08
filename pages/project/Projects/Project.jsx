@@ -53,7 +53,7 @@ class ProjectComponent extends React.PureComponent {
   }
 
   handleClose = () => {
-    history.push('/');
+    history.push('/project/');
     this.isOpen();
   }
 

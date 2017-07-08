@@ -1,14 +1,16 @@
 ---
 title: Hercules Galaxy
 
-description:  Designed and developed data visualization tools for the Schulich School of Medicine & Dentistry, allowing for the deeper analysis of various performance metrics, enabling the school to make informed decisions in allocating $60 000 000 in research grant funding. 
+description:  Designed and developed data visualization tools for the Schulich School of Medicine & Dentistry, allowing for the deeper analysis of various performance metrics, enabling the school to make informed decisions in allocating $60 000 000 in research grant funding.
 
-preview: previews/hercules.png
+preview: previews/herculesGalaxy.png
 
 skills: C++, Qt
 
 github: HerculesGalaxy
 ---
+
+![Preview of the Hercules Galaxy app][image-1]
 
 The Schulich School of Medicine & Dentistry at Western University has a Galaxy team responsible for allocating resources (primarily staff and funding) across its departments. For years, they have been using various systems to help them make allocation decisions, but each had their drawbacks, and so they had asked for a custom software solution.
 
@@ -34,5 +36,7 @@ Integrating the new system into the existing workflow of the Galaxy team require
 
 Beyond this, we conducted various user and system tests to ensure the viability of the product. One of the benefits of including user in the development process is that it lowers their learning curve. Nonetheless, we produced an educational video and detailed application documentation to act as a reference,  or as training material for new employees.
 
-[1]:	/previews/HerculesGalaxy.pdf "Hercules Galaxy Report"
-[2]:	/previews/HerculesGalaxy.pdf "Hercules Galaxy Report"
+[1]:	previews/herculesGalaxy/Hercules%20Galaxy.pdf "Hercules Galaxy Report"
+[2]:	previews/herculesGalaxy/Hercules%20Galaxy.pdf "Hercules Galaxy Report"
+
+[image-1]:	previews/herculesGalaxy.png "Hercules Galaxy"
