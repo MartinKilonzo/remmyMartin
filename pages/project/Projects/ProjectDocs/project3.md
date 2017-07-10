@@ -1,7 +1,7 @@
 ---
-title: Twitter Crime Prediction
+title: Predicting Crime Using Twitter
 
-description: Using tweets to assess local moods, and using changes in local emotions as a key feature in predicting criminal activity in Vancouver. Using natural language processing, local tweets were synthesized into an _emotional rating_ which was used to assess an area’s mood prior to a crime in the same area.
+description: Using tweets to assess local moods, and using changes in local emotions as a key feature in predicting criminal activity in Vancouver. Through the use of natural language processing, local tweets were synthesized into an “emotional rating” which was used to assess an area’s mood prior to a crime in the same area.
 
 preview: previews/tweetCrime.png
 
@@ -99,7 +99,7 @@ _The results of the control model._
 _The results of using the Twitter Model to predict crimes._
 
 ### Future Work
-This was an interesting exploration into the use of language as a measurement for emotion and ultimately as a predictor for crime. In the future, this paper expects to improve the model to include a context analysis to get an understanding of the topics discussed and attempt to correlate these with events even beyond the scope of crime.
+This was an interesting exploration into the use of language as a measurement for emotion and ultimately as a predictor for crime. Some next steps would be to include contextual analysis to get an understanding of the topics discussed and attempt to relate these with events even beyond the scope of crime.
 
 
 

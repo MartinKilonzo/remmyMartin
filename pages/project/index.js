@@ -64,7 +64,6 @@ const getProjects = () => {
     for (const field in project) {
       if (field !== 'html') {
         let data = project[field];
-        console.log(data, field);
         if (data[0] === ' ') {
           data = data.slice(1);
         }

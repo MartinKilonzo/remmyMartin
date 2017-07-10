@@ -17,10 +17,10 @@ class ProjectComponent extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const projectpath = `/project/${this.props.github}`;
+    const projectPath = `/project/${this.props.github}`;
     this.state = {
-      open: projectpath === history.getCurrentLocation().pathname,
-      projectpath,
+      open: projectPath === history.getCurrentLocation().pathname,
+      projectPath,
     };
   }
 
@@ -49,7 +49,7 @@ class ProjectComponent extends React.PureComponent {
 
   isOpen = () => {
     const { pathname } = history.getCurrentLocation();
-    this.setState({ open: this.state.projectpath === pathname });
+    this.setState({ open: this.state.projectPath === pathname });
   }
 
   handleClose = () => {
@@ -58,6 +58,8 @@ class ProjectComponent extends React.PureComponent {
   }
 
   render() {
+    const image = new Image();
+    image.src = this.props.preview;
     const styles = {
       wrapper: {
         margin: '18px 0',
@@ -68,28 +70,32 @@ class ProjectComponent extends React.PureComponent {
       },
       buttonWrapper: {
         height: '100%',
-        minHeight: '236px',
         padding: '24px 36px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center',
         cursor: 'pointer',
         background: 'white',
         backgroundColor: 'white',
         textAlign: 'left',
       },
-      preview: {
+      previewWrapper: {
         width: '42%',
-        height: '100%',
         paddingRight: '4%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       },
-      description: {
-        height: '100%',
+      preview: {
+        maxHeight: '240px',
+        maxWidth: '100%',
+      },
+      descriptionWrapper: {
         minHeight: '236px',
         width: '50%',
         paddingLeft: '4%',
         display: 'flex',
         flexDirection: 'column',
+        flexGrow: '1',
       },
       innerDescriptionWrapper: {
         width: '100%',
@@ -122,13 +128,15 @@ class ProjectComponent extends React.PureComponent {
       return cleanedSkill;
     });
 
-    const link = <Link to={this.state.projectpath} />;
+    const link = <Link to={this.state.projectPath} />;
 
     return (
       <div style={{ width: '100%' }}>
         <RaisedButton style={styles.wrapper} buttonStyle={styles.buttonStyle} overlayStyle={styles.buttonWrapper} containerElement={link} onTouchTap={this.handleTouchTap} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} fullWidth>
-          <img src={this.props.preview} alt={`${this.props.title} Preview`} style={styles.preview} />
-          <div style={styles.description}>
+          <div style={styles.previewWrapper}>
+            <img src={this.props.preview} alt={`${this.props.title} Preview`} style={styles.preview} />
+          </div>
+          <div style={styles.descriptionWrapper}>
             <h5 style={styles.title}>{this.props.title}</h5>
             <p>{this.props.description}</p>
             <div style={styles.innerDescriptionWrapper}>
