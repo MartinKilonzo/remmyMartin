@@ -17,7 +17,7 @@ class ProjectComponent extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const projectPath = `/project/${this.props.github}`;
+    const projectPath = `${this.props.rootPath}/project/${this.props.github}`;
     this.state = {
       open: projectPath === history.getCurrentLocation().pathname,
       projectPath,
@@ -53,7 +53,7 @@ class ProjectComponent extends React.PureComponent {
   }
 
   handleClose = () => {
-    history.push('/project/');
+    history.push(`${this.props.rootPath}/project/`);
     this.isOpen();
   }
 
@@ -159,6 +159,7 @@ class ProjectComponent extends React.PureComponent {
 
 ProjectComponent.defaultProps = {
   open: false,
+  rootPath: '',
 };
 
 export default ProjectComponent;

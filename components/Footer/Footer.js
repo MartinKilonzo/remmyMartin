@@ -1,13 +1,3 @@
-/**
- * React Static Boilerplate
- * https://github.com/kriasoft/react-static-boilerplate
- *
- * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React from 'react';
 import Link from '../Link';
 import s from './Footer.css';
@@ -16,16 +6,24 @@ function Footer() {
   return (
     <footer className={`mdl-mini-footer ${s.footer}`}>
       <div className="mdl-mini-footer__left-section">
-        <div className="mdl-logo">© Company Name</div>
+        <div className="mdl-logo">© Remmy Martin Kilonzo</div>
         <ul className="mdl-mini-footer__link-list">
-          <li><Link to="/privacy">Privacy & Terms</Link></li>
-          <li><Link to="/not-found">Not Found</Link></li>
+          <li><a href="https://www.dropbox.com/s/2s0nv4ltfucvexd/Resume.pdf?dl=0" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><Link to="#">:)</Link></li>
         </ul>
       </div>
       <div className="mdl-mini-footer__right-section">
         <ul className="mdl-mini-footer__link-list">
           <li className="mdl-mini-footer--social-btn" style={{ backgroundColor: 'transparent' }}>
-            <a href="https://github.com/MartinKilonzo" role="button" title="GitHub">
+            <a href="https://ca.linkedin.com/in/MartinKilonzo" target="_blank" rel="noopener noreferrer" role="button" title="LinkedIn">
+              <svg viewBox="0 0 512 512">
+                <path
+                  fill="#fff" d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"/>
+              </svg>
+            </a>
+          </li>
+          <li className="mdl-mini-footer--social-btn" style={{ backgroundColor: 'transparent' }}>
+            <a href="https://github.com/MartinKilonzo" target="_blank" rel="noopener noreferrer" role="button" title="GitHub">
               <svg width="36" height="36" viewBox="0 0 24 24">
                 <path
                   fill="#fff" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58
@@ -38,22 +36,6 @@ function Footer() {
                   17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,
                   16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27
                   14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li className="mdl-mini-footer--social-btn" style={{ backgroundColor: 'transparent' }}>
-            <a href="https://twitter.com/ReactStatic" role="button" title="Twitter">
-              <svg width="36" height="36" viewBox="0 0 24 24">
-                <path
-                  fill="#fff" d="M17.71,9.33C18.19,8.93 18.75,8.45 19,7.92C18.59,8.13 18.1,8.26
-                  17.56,8.33C18.06,7.97 18.47,7.5 18.68,6.86C18.16,7.14 17.63,7.38 16.97,
-                  7.5C15.42,5.63 11.71,7.15 12.37,9.95C9.76,9.79 8.17,8.61 6.85,7.16C6.1,8.38
-                  6.75,10.23 7.64,10.74C7.18,10.71 6.83,10.57 6.5,10.41C6.54,11.95 7.39,12.69
-                  8.58,13.09C8.22,13.16 7.82,13.18 7.44,13.12C7.81,14.19 8.58,14.86 9.9,15C9,15.76
-                  7.34,16.29 6,16.08C7.15,16.81 8.46,17.39 10.28,17.31C14.69,17.11 17.64,13.95
-                  17.71,9.33M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1
-                  12,2Z"
                 />
               </svg>
             </a>
