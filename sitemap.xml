@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://remmymartin.com/</loc>
+    <loc>http://remmymartin.com/remmyMartin/</loc>
   </url>
   <url>
-    <loc>http://remmymartin.com/error</loc>
+    <loc>http://remmymartin.com/remmyMartin/error</loc>
   </url>
   <url>
-    <loc>http://remmymartin.com/about</loc>
+    <loc>http://remmymartin.com/remmyMartin/about</loc>
   </url>
   <url>
-    <loc>http://remmymartin.com/project/</loc>
+    <loc>http://remmymartin.com/remmyMartin/project/</loc>
   </url>
 </urlset>
